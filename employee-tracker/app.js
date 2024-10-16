@@ -53,7 +53,7 @@ const mainMenu = () => {
 const viewDepartments = async () => {
   try {
     const res = await pool.query('SELECT * FROM department'); // Execute a SQL query
-    console.log(res.rows); // Log the results
+    console.table(res.rows); // Log the results
   } catch (err) {
     console.error('Error executing query', err.stack); // Handle errors
   } finally {
@@ -65,7 +65,7 @@ const viewDepartments = async () => {
 const viewRoles = async () => {
   try {
     const res = await pool.query('SELECT * FROM role'); // Execute a SQL query
-    console.log(res.rows); // Log the results
+    console.table(res.rows); // Log the results
   } catch (err) {
     console.error('Error executing query', err.stack); // Handle errors
   } finally {
@@ -77,7 +77,7 @@ const viewRoles = async () => {
 const viewEmployees = async () => {
   try {
     const res = await pool.query('SELECT * FROM employee'); // Execute a SQL query
-    console.log(res.rows); // Log the results
+    console.table(res.rows); // Log the results
   } catch (err) {
     console.error('Error executing query', err.stack); // Handle errors
   } finally {
