@@ -126,9 +126,17 @@ const addRole = async () => {
   ]);
 
   try {
-    await pool.query('INSERT INTO role (title, salary, department_id) VALUES ($1, $2, $3)', 
-    [roleDetails.title, roleDetails.salary, roleDetails.department_id]);
-    console.log('Role added successfully!');
+    // Check if the role title already exists
+    const existingRole = await pool.query('SELECT * FROM role WHERE title = $1', [roleDetails.title]);
+    
+    if (existingRole.rows.length > 0) {
+      console.log('Error: Role title already exists. Please enter a different title.');
+    } else {
+      // Insert the new role if it doesn't exist
+      await pool.query('INSERT INTO role (title, salary, department_id) VALUES ($1, $2, $3)', 
+      [roleDetails.title, roleDetails.salary, roleDetails.department_id]);
+      console.log('Role added successfully!');
+    }
   } catch (err) {
     console.error('Error executing query', err.stack);
   } finally {
