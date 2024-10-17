@@ -36,4 +36,4 @@ No one
 [Email Me](mailto:jgonnella@test.mail)
 
 ## Video Walk Through
-[Watch Video](URL_TO_YOUR_VIDEO)
+[Watch Video](https://drive.google.com/file/d/1CSepXkdsRLMXCCd4zhGMjCr7J-_9y_cy/view)
