@@ -1,4 +1,4 @@
-# SQP-Employee-Tracker
+# SQL-Employee-Tracker
 
 
 ## Table of Contents
